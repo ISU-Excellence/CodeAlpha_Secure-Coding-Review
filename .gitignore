@@ -1,0 +1,5 @@
+__pycache__/ 
+*.pyc 
+students_secure.db 
+students.db 
+.vscode/ 

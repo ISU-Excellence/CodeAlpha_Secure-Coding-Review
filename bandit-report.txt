@@ -1,0 +1,64 @@
+Run started:2026-09-25 14:00:48.678777+00:00
+
+Test results:
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'admin123'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
+   Location: .\student_management.py:21:17
+20	ADMIN_USERNAME = "admin"
+21	ADMIN_PASSWORD = "admin123"
+22	
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html
+   Location: .\student_management.py:46:16
+45	    # Direct SQL construction
+46	    query = f"""
+47	    INSERT INTO students (name, email, grade)
+48	    VALUES ('{name}', '{email}', '{grade}')
+49	    """
+50	
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html
+   Location: .\student_management.py:83:14
+82	
+83	    query = f"SELECT * FROM students WHERE name = '{name}'"
+84	
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html
+   Location: .\student_management.py:109:14
+108	
+109	    query = f"DELETE FROM students WHERE id = {student_id}"
+110	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 112
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 1
+		Medium: 3
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 3
+		Medium: 1
+		High: 0
+Files skipped (0):
